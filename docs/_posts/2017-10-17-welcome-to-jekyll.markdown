@@ -1,25 +1,25 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to Barista!"
 date:   2017-10-17 13:27:09 -0500
-categories: jekyll update
+categories: javascript barista
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+One of the ways that I learn is to document what I learn as I go. Working through tutorials, books and blog posts are great, but I also find that if I force myself to explain features in my own words, it gets down in my brain better. Plus, I wanted to build a repository for all the snippets of JavaScript language that I'm 
+writing along the way. So this is what this site will be used for.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+For instance, here is a function for determining if a number is a prime number:
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+{% highlight javascript %}
+function isPrime(num) {
+  if (num < 2) {
+    return false;
+  } 
+  let sq = Math.floor(Math.sqrt(num));
+  for (var i = 2; i <= sq; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
 {% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
