@@ -12,3 +12,20 @@ function isPrime(num) {
   }
   return true;
 }
+
+function smallistMultiple(end) {
+  if (!Number.isInteger(end) || end < 0) {
+    return -1;
+  }
+  let product = 1;
+  for (var n = 2; n <= end; n += (n % 2 == 0) ? 1 : 2) {
+    if (isPrime(n)) {
+      let pow = 2;
+      while(Math.pow(n, pow) <= end) {
+        pow++;
+      }
+      product *= Math.pow(n, pow - 1);
+    }
+  }
+  return product;
+}

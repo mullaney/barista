@@ -11,18 +11,39 @@ This is a problem from [project eulor](https://projecteuler.net/problem=5):
 > 
 > What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-The first question is how did they get the number 2520? I tried multiplying all the numbers in the range 1 to 10 and got: 3628800. This clearly doesn't arrive at the right number. And then I thought, what if I just multiple by the prime numbers between 1 & 10? That is 2 x 3 x 5 x 7 or 210, a number far too low. So that can't be right. Of course, because something is divisible by 2 doesn't mean that it's divisable by 4 or 8. And divisible by 3 doesn't mean divisible by 9. 
+The first question is how did they get the number 2520? I tried multiplying all the numbers in the range 1 to 10 and got 3628800, much higher than the answer they suggest. 
 
-So if you add some factors to the list to account for the numbers 4, 8 & 9, you get this list:[2 x 2 x 2 x 3 x 3 x 5 x 7](https://www.google.com/search?client=safari&rls=en&q=2*2*2*3*3*5*7&ie=UTF-8&oe=UTF-8). Multiply those and you do get 2520, a number which is divisable by every number between 1 and 10.
+And then I thought, what if I just multiple by the prime numbers between 1 & 10? That is 2 x 3 x 5 x 7 or 210, a number far too low. So that can't be right either. Of course, because something is divisible by 2 doesn't mean that it's divisable by 4 or 8. And divisible by 3 doesn't mean divisible by 9. 
 
-So you should be able to figure out the number for answer for the range of numbers by 1 to 20 by starting with these numbers: 2,3,5,7,11,13,17 & 19 and then adding more of these to make sure that every other number in that range can be derived by some version of these factors: 2,2,2,2,3,3,5,7,11,13,17,19. Every number between 1 and 20 can be represented by a product of these divisors. Multiple these and we should have the correct answer. The product is 232792560.
+So if you add some factors to the list so that you can to account for the numbers 4, 8 & 9, you get this list: [2 x 2 x 2 x 3 x 3 x 5 x 7](https://www.google.com/search?client=safari&rls=en&q=2*2*2*3*3*5*7&ie=UTF-8&oe=UTF-8). Multiply those and you do get 2520, a number which is divisable by every number between 1 and 10. You could also express this list as 2^3 x 3^2 * 5 * 7.
 
-Let's give that a try to see if we are right...
+So how do you come up with this list of factors? I'm going to assume that the range always begins with 1 and that the function accepts a number for the end of the range.
+* Check to see if the range submitted to the function is valid.
+* Set the temporary return result to 1.
+* Step through the range and look for prime numbers.
+* For each prime number you check to see to what power you can raise it and still have a result that is less than the maximum for the range. For instance 2^3 (or 8) is the largest power of 2 that is less than 10 and 2^4 (or 16) is the largest power of 2 that is less than 20.
+* Once you have found the largest power of the prime, you multiply it by the temporary return result.
+* Keep movng through the numbers to find the next largest prime.
+* Once you have exhausted all the numbers you return the result. 
 
-And it is! Great. But we are not just interested in getting the right answer. We are learning to code, so let's see if we can make a function that does this. How would we go about generating this list of factors and then multiplying them?
+Here is my first attempt at this function:
+{% highlight javascript %}
+function smallistMultiple(end) {
+  if (!Number.isInteger(end) || end < 0) {
+    return -1;
+  }
+  let product = 1;
+  for (var n = 2; n <= end; n += (n % 2 == 0) ? 1 : 2) {
+    if (isPrime(n)) {
+      let pow = 2;
+      while(Math.pow(n, pow) <= end) {
+        pow++;
+      }
+      product *= Math.pow(n, pow - 1);
+    }
+  }
+  return product;
+}
+{% endhighlight %}
 
-Well, one way would be to walk through the range and look for all prime numbers and prime numbers to a power. For instance, in this range that would be:
-
-* The primes: 2, 3, 5, 7, 11, 13, 17, 19
-* Numbers which are powers of primes: 4, 8, 16 (2^2, 2^3 & 2^4) and 9 (3^2)
-
+This looks like it works correctly. It's right for the two ranges given in the problem. If you have a version which is more elegant or clear, let me know.
