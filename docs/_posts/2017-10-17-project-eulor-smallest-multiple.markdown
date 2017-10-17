@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Project Eulor: Smallest Multiple"
-date:   2017-10-17 19:00:00 -0500
+date:   2017-10-17 18:00:00 -0500
 categories: javascript project eulor functions prime numbers
 ---
 
