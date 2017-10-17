@@ -48,4 +48,4 @@ function isPrime(num) {
 
 This version checks to see if the number is 2 and returns true if it is. The for loop only checks odd numbers starting from 3. I think this is a little bit more readable, and it may be a little bit more efficient, since you eliminating the conditional statement from the for loop. It feels less clever to me. I'm sure there are many examples of nearly single line functions which determine if a number is prime or not. However, at this point I prefer something that I can read and understand right away.
 
-The second version of this is in a file called [numerical.js]() in the code directory of this repository.
+The second version of this is in a file called [numerical.js](https://github.com/mullaney/barista/blob/master/functions/numerical.js) in the code directory of this repository.
