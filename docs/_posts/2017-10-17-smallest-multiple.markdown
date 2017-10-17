@@ -47,3 +47,5 @@ function smallistMultiple(end) {
 {% endhighlight %}
 
 This looks like it works correctly. It's right for the two ranges given in the problem. If you have a version which is more elegant or clear, let me know.
+
+The function is included in [numerical.js](https://github.com/mullaney/barista/blob/master/functions/numerical.js) in the code directory of this repository.
