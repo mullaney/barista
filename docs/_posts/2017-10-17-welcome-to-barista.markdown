@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Barista!"
 date:   2017-10-17 13:27:09 -0500
-categories: javascript barista
+categories: javascript barista functions prime numbers
 ---
 I like to document what I learn as I go. Working through tutorials, books and blog posts are great, but I also find that if I force myself to explain features in my own words, it gets down into my brain better. Plus, I wanted to build a repository for all the snippets of JavaScript language that I'm writing along the way. So this is what this site will be used for.
 
