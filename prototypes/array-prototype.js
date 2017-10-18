@@ -71,5 +71,31 @@ logStatus(myArr);
 myArr.fill(1,0,-1);
 logStatus(myArr);
 
+myArr = [0, 1, 2, 3, 4];
+myArr[-1] = 99;
+logStatus(myArr);
+
+myArr = [0, 1, 2, 3, 4];
+myArr.push(88, 99);
+myArr.unshift(68, 69);
+logStatus(myArr);
+
+myArr = [0, 1, 2, 3, 4];
+var anotherArr = [5, 6, 7, 8, 9];
+Array.prototype.push.apply(myArr, anotherArr);
+console.log(myArr);
+
+myArr = [88, 0, 1, 2, 3, 4, 99];
+var myReturn = myArr.pop();
+console.log(myReturn);
+// 99
+myReturn = myArr.shift();
+console.log(myReturn);
+// 88
 
 
+myArr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+while(myElement = myArr.shift()) {
+  console.log(myElement);
+}
