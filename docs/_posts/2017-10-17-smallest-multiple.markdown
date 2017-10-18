@@ -11,20 +11,36 @@ This is a problem from [project eulor](https://projecteuler.net/problem=5):
 > 
 > What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-The first question is how did they get the number 2520? I tried multiplying all the numbers in the range 1 to 10 and got 3628800, much higher than the answer they suggest. 
+If you are looking for a number that can be divided by all the numbers between 1 and 10, you might try multiplying every number in the list: 
 
-And then I thought, what if I just multiple by the prime numbers between 1 & 10? That is 2 x 3 x 5 x 7 or 210, a number far too low. So that can't be right either. Of course, because something is divisible by 2 doesn't mean that it's divisable by 4 or 8. And divisible by 3 doesn't mean divisible by 9. 
+> 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10 = ?
 
-So if you add some factors to the list so that you can to account for the numbers 4, 8 & 9, you get this list: [2 x 2 x 2 x 3 x 3 x 5 x 7](https://www.google.com/search?client=safari&rls=en&q=2*2*2*3*3*5*7&ie=UTF-8&oe=UTF-8). Multiply those and you do get 2520, a number which is divisable by every number between 1 and 10. You could also express this list as 2^3 x 3^2 * 5 * 7.
+When you multiply those numbers together, you get 3628800, a number much bigger than the example answer they provide. Obviously you don't need to mulitply everything together.
 
-So how do you come up with this list of factors? I'm going to assume that the range always begins with 1 and that the function accepts a number for the end of the range.
-* Check to see if the range submitted to the function is valid.
-* Set the temporary return result to 1.
-* Step through the range and look for prime numbers.
-* For each prime number you check to see to what power you can raise it and still have a result that is less than the maximum for the range. For instance 2^3 (or 8) is the largest power of 2 that is less than 10 and 2^4 (or 16) is the largest power of 2 that is less than 20.
-* Once you have found the largest power of the prime, you multiply it by the temporary return result.
-* Keep movng through the numbers to find the next largest prime.
-* Once you have exhausted all the numbers you return the result. 
+The first thing you might notice is that if something is divisible by both 2 and 5 then it's redudant to say that it's also divisible by 10. We can take 10 off the list. Maybe what that means if we just multiply the prime numbers between 1 and 10 it will work! Let's try.
+
+> 2 * 3 * 5 * 7 = ?
+
+This time, the result is 210, far below the target of 2520. So what's missing. Well first off, it's not divisible by 9. It is divisible by 3 however and if we multiply it by 3, it's now divisible by 9.
+
+> 2 * 3 * 3 * 5 * 7 = ?
+
+Again, this doesn't quite get the right result. The product of these numbers is 630. If we try all the numbers between 1 and 10 we find that two numbers do not divise evenly into 630. Those numbers are 4 and 8. So if we add two more 2s to the list of factors, we should get a number that is divisible by everything.
+
+> 2 * 2 * 2 * 3 * 3 * 5 * 7
+
+This yields the expected result of 2520 and we can presume this is the lowest number that is divisible by all numbers between 1 and 10. 
+
+So to solve the problem from Project Eulor, you could just go through a similar set of deductions for all the numbers between 1-20. But we want to come up wth a function to figure it out for us. Here are the steps I took to figure it out:
+
+So how do you come up with this list of factors? I'm going to assume that the range always begins with 1 and that the function accepts a number for the end or top of the range.
+1. Check to see if the range submitted to the function is valid.
+2. Set the temporary return result to 1.
+3. Step through the range and look for prime numbers.
+4.  For each prime number you check to see to what power you can raise it and still have a result that is less than the maximum for the range. For instance 2^3 (or 8) is the largest power of 2 that is less than 10 and 2^4 (or 16) is the largest power of 2 that is less than 20.
+5. Once you have found the largest power of the prime, you multiply it by the temporary return result.
+6. Keep movng through the numbers to find the next largest prime.
+7. Once you have exhausted all the numbers you return the result. 
 
 Here is my first attempt at this function:
 {% highlight javascript %}
