@@ -42,7 +42,4 @@ function findPrime(num) {
     }
     n++;
   }
-  return -1;
 }
-
-console.log(findPrime(20));
