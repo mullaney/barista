@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "Project Eulor - 10001st Prime"
+date:   2017-10-19 20:00:00 -0500
+categories: javascript functions prime
+---
+
+Another quick problem from [ProjectEulor.net](https://projecteuler.net/problem=7):
+
+> By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+> 
+> What is the 10 001st prime number?
+
+One of the reasons for this blog (and the repo that goes with it), is just to collect functions that I write that I feel might be reusable later. In the first post on the blog, I have a function to let me know if an integer is a prime number. It will be useful for solving this problem.
+
+{% highlight javascript %}
+function isPrime(num) {
+  if (!Number.isInteger(num) || num < 2) {
+    return false;
+  }
+  let sq = Math.floor(Math.sqrt(num));
+  for (var i = 2; i <= sq; i += (i % 2 == 0) ? 1 : 2) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+{% endhighlight %}
+
+To find the 10001st prime, I need to make a function that recieves a positive integer and returns the nth prime number. For instance, the first prime number is 2; the 4th prime number is 7 and the 20th prime number is 71.
+
+A function that does this should be pretty simple. Set a counter to 0. Then step through every number starting with 2. Whenever you encounter a prime, you increment the counter. When the counter equals the number passed to the function, you return the prime number just found. Here is the function that will get you the answer to the above question from Project Eulor:
+
+{% highlight javascript %}
+function findPrime(num) {
+  if (!Number.isInteger(num) || num < 1) {
+    return -1;
+  }
+  let count = 0, n = 1;
+  while (count < num) {
+    if (isPrime(n)) {
+      count++;
+      if (count == num) {
+        return n;
+      }
+    }
+    n++;
+  }
+}
+{% endhighlight %}
+
+I have a feeling that these functions together are not the most efficient way to do this and that if you pass a very large integer to the findPrime function, it will take a very long time. But at this point, I don't know of a better way. Perhaps I'll revisit this, when I do.
+
+Both of these functions can be found in a file called [numerical.js](https://github.com/mullaney/barista/blob/master/functions/numerical.js) in the code directory of this repository.

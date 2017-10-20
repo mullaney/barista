@@ -27,3 +27,22 @@ function smallistMultiple(end) {
   }
   return product;
 }
+
+function findPrime(num) {
+  if (!Number.isInteger(num) || num < 1) {
+    return -1;
+  }
+  let count = 0, n = 1;
+  while (count < num) {
+    if (isPrime(n)) {
+      count++;
+      if (count == num) {
+        return n;
+      }
+    }
+    n++;
+  }
+  return -1;
+}
+
+console.log(findPrime(20));

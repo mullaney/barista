@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Project Eulor Smallest Multiple"
+title:  "Project Eulor - Smallest Multiple"
 date:   2017-10-17 16:00:00 -0500
 categories: javascript project eulor functions prime numbers
 ---
