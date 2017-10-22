@@ -8,3 +8,7 @@ These are some interesting links to explore related to Javascript:
 * [Here's Why Client Side Rendoring Won](https://medium.freecodecamp.org/heres-why-client-side-rendering-won-46a349fadb52) by Cory House
 * [Understanding Date and Time in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript) by Tania Rascia
 * [Essential JavaScript Libraries and Frameworks You Should Know About](https://code.tutsplus.com/articles/essential-javascript-libraries-and-frameworks-you-should-know-about--cms-29540) by Manjunath M
+
+## NPM Packages
+* [nodemon](https://www.npmjs.com/package/nodemon)
+* [lodash](https://www.npmjs.com/package/lodash)
