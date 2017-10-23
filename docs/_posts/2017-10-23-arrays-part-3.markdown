@@ -5,7 +5,7 @@ date:   2017-10-23 11:00:00 -0500
 categories: javascript arrays filter foreach json
 ---
 
-Over the weekend I began working through a tutorial on [node.js and express](https://www.udemy.com/the-complete-nodejs-developer-course-2/). It's quite good so far. I've worked through about 10% of the course and thought I would write a small project to reinforce many of the things that I've learned. The app described in this can be found in the repo for this blog.
+Over the weekend I began working through a tutorial on [node.js and express](https://www.udemy.com/the-complete-nodejs-developer-course-2/). It's quite good so far. I've worked through about 10% of the course and thought I would write a small project to reinforce many of the things that I've learned. The app described in this can be found in the [repo](https://github.com/mullaney/barista/tree/master/examples/norton-films) for this blog.
 
 A lot of the new stuff is not directly related to arrays. But toward the end, we will talk about .forEach and .filter, both methods in the array prototype.
 
@@ -148,4 +148,4 @@ Notice that filter doesn't change the original array.
 
 And we are done! I may come back to this example and add more to it when I write more about arrays. But for now, I want to get back to the tutorial.
 
-The code and the JSON data are in a folder on this repo called 'norton-films'. You can find more about arrays on this blog in [part 1]({% post_url 2017-10-18-arrays-part-1 %}) or [part 2]({% post_url 2017-10-21-arrays-part 2 %}) of this series.
+The code and the JSON data are in a folder on this repo called [norton-films](https://github.com/mullaney/barista/tree/master/examples/norton-films). You can find more about arrays on this blog in [part 1]({% post_url 2017-10-18-arrays-part-1 %}) or [part 2]({% post_url 2017-10-21-arrays-part 2 %}) of this series.
