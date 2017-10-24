@@ -14,6 +14,7 @@ These are some interesting links to explore related to Javascript:
 * [nodemon](https://www.npmjs.com/package/nodemon)
 * [lodash](https://www.npmjs.com/package/lodash)
 * [yargs](https://www.npmjs.com/package/yargs) - parse your args
+* [request](https://www.npmjs.com/package/request) - request data from urls
 
 ## Tutorials
 * [node.js and express](https://www.udemy.com/the-complete-nodejs-developer-course-2)
