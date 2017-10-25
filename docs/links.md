@@ -16,6 +16,8 @@ These are some interesting links to explore related to Javascript:
 * [yargs](https://www.npmjs.com/package/yargs) - parse your args
 * [request](https://www.npmjs.com/package/request) - request data from urls
 * [axios](https://www.npmjs.com/package/axios)
+* [expressjs.com](http://expressjs.com)
+* [handlebars](https://www.npmjs.com/package/handlebars)
 
 ## Tutorials
 * [node.js and express](https://www.udemy.com/the-complete-nodejs-developer-course-2)
