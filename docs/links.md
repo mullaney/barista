@@ -18,6 +18,11 @@ These are some interesting links to explore related to Javascript:
 * [axios](https://www.npmjs.com/package/axios)
 * [expressjs.com](http://expressjs.com)
 * [handlebars](https://www.npmjs.com/package/handlebars)
+* [mocha](https://www.npmjs.com/package/mocha)
+* [expect](https://github.com/mjackson/expect) no documenation at npm
+* [rewire](https://www.npmjs.com/package/rewire)
+* [supertest](https://www.npmjs.com/package/supertest)
+
 
 ## Tutorials
 * [node.js and express](https://www.udemy.com/the-complete-nodejs-developer-course-2)
