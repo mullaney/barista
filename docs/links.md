@@ -22,7 +22,14 @@ These are some interesting links to explore related to Javascript:
 * [expect](https://github.com/mjackson/expect) no documenation at npm
 * [rewire](https://www.npmjs.com/package/rewire)
 * [supertest](https://www.npmjs.com/package/supertest)
+* [jwt](https://jwt.io) generate json web tokens
+* [validator](https://www.npmjs.com/package/validator) validate input like emails
+* [bcryptjs](https://www.npmjs.com/package/bcryptjs)
 
+## Database Related Links
+* [mongo db](https://www.mongodb.com)
+* [robomongo](https://robomongo.org/)
+* [mongoose](http://mongoosejs.com)
 
 ## Tutorials
 * [node.js and express](https://www.udemy.com/the-complete-nodejs-developer-course-2)
