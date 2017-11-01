@@ -9,6 +9,7 @@ These are some interesting links to explore related to Javascript:
 * [Understanding Date and Time in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript) by Tania Rascia
 * [Essential JavaScript Libraries and Frameworks You Should Know About](https://code.tutsplus.com/articles/essential-javascript-libraries-and-frameworks-you-should-know-about--cms-29540) by Manjunath M
 * [node.js v8 debugger documentation](https://nodejs.org/api/debugger.html)
+* [Transforming Arrays with Array#map](http://adripofjavascript.com/blog/drips/transforming-arrays-with-array-map.html)
 
 ## NPM Packages
 * [nodemon](https://www.npmjs.com/package/nodemon)
