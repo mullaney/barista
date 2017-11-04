@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript Arrays - Part 4"
-date:   2017-11-03 23:00:00 -0500
+date:   2017-11-03 22:00:00 -0500
 categories: javascript arrays map
 ---
 
@@ -70,6 +70,6 @@ I like how the new arrow function looks when passed as an argument to another me
 
 ## .map vs .forEach
 
-At first glance .map and .forEach might seem quite similar. But there is an important difference. The map method returns a new array and doesn't change the original array. While forEach runs code for each element, but the return is undefined. 
+At first glance .map and .forEach might seem quite similar. But there is an important difference. The map method returns a new array and doesn't change the original array. While forEach runs code for each element, but the return is undefined.
 
 The code for this post is in a file called growth.js in this repository. You can find more about arrays on this blog in [part 1]({% post_url 2017-10-18-arrays-part-1 %}), or [part 2]({% post_url 2017-10-21-arrays-part 2 %}) or [part 3](https://mullaney.github.io/barista/javascript/arrays/filter/foreach/json/2017/10/23/arrays-part-3.html) of this series.
