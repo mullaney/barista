@@ -47,7 +47,7 @@ That's a lot of new stuff. So lets go through it section by section.
 
 ## require & fs
 
-Require is a function which pulls in code from another source. 
+Require is a function which pulls in code from another source.
 
 {% highlight javascript %}
   const fs = require('fs');
@@ -57,7 +57,7 @@ In this case, fs is a built in module that comes with node.js to help you do thi
 
 ## try/catch, readFileSync & JSON.parse
 
-Next we set up a function to fetch the data from a file called norton-films.json. 
+Next we set up a function to fetch the data from a file called norton-films.json.
 
 {% highlight javascript %}
   var fetchFilms = () => {
@@ -70,7 +70,7 @@ Next we set up a function to fetch the data from a file called norton-films.json
   };
 {% endhighlight %}
 
-The function that opens and reads a file is [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options). This loads everything in the file as a string. Next we use JSON.parse() to take the string and convert the contents into array object. 
+The function that opens and reads a file is [fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options). This loads everything in the file as a string. Next we use JSON.parse() to take the string and convert the contents into array object.
 
 Notice that the guts of the function are inside a block of code after 'try'. The try/catch blocks allow you to do something that might cause an error. When reading a file, there is always a possibility that the file doesn't exist, and it will throw an error. If it does, the code continues to execute and jumps to the catch block. In this case, an empty array is returned.
 
@@ -102,7 +102,7 @@ Also, notice how you can insert the values from variables directly into a string
 
 ## .forEach
 
-Here we go! A new array method to explore: [.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach). 
+Here we go! A new array method to explore: [.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 {% highlight javascript %}
   let films = fetchFilms();
@@ -120,7 +120,7 @@ If you want to run a function for each element of an array, you use .forEach and
 
 ## .filter
 
-[.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) takes an array and allows us to filter out the rows of the array we don't need, or focus on the ones we do need. In this app, there are two examples of how to use filter. 
+[.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) takes an array and allows us to filter out the rows of the array we don't need, or focus on the ones we do need. In this app, there are two examples of how to use filter.
 
 In the first example, we want to list the films that Ed Norton has done with Wes Anderson as the director:
 
@@ -144,8 +144,8 @@ Next we use filter to find films Ed Norton did before the year 2000.
   });
 {% endhighlight %}
 
-Notice that filter doesn't change the original array. 
+Notice that filter doesn't change the original array.
 
 And we are done! I may come back to this example and add more to it when I write more about arrays. But for now, I want to get back to the tutorial.
 
-The code and the JSON data are in a folder on this repo called [norton-films](https://github.com/mullaney/barista/tree/master/examples/norton-films). You can find more about arrays on this blog in [part 1]({% post_url 2017-10-18-arrays-part-1 %}) or [part 2]({% post_url 2017-10-21-arrays-part 2 %}) of this series.
+The code and the JSON data are in a folder on this repo called [norton-films](https://github.com/mullaney/barista/tree/master/examples/norton-films). You can find more about arrays on this blog in [part 1]({{ site.baseurl }}{% post_url 2017-10-18-arrays-part-1 %}), or [part 2]({{ site.baseurl }}{% post_url 2017-10-21-arrays-part 2 %}) of this series.

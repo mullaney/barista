@@ -27,7 +27,7 @@ The .fill method can take two more arguments besides the value you are filling t
   // [ 0, 0, 0, 0, 1, 0, 0, 0, 0 ]
 {% endhighlight %}
 
-When the start parameter is 4, it refers to the element whose index is 4. It doesn't mean the 4th element. The end parameter tells the method where to stop filling the array, in this case it means stop filling the array right before it reaches the element whose index is 5. 
+When the start parameter is 4, it refers to the element whose index is 4. It doesn't mean the 4th element. The end parameter tells the method where to stop filling the array, in this case it means stop filling the array right before it reaches the element whose index is 5.
 
 Negative numbers work for both the start and end parameters. For instance:
 
@@ -151,6 +151,4 @@ With this in mind, I wrote a function to sort strings alphabetically. It takes a
   }
 {% endhighlight %}
 
-This function can be found in a file called [textual.js](https://github.com/mullaney/barista/blob/master/functions/textual.js) in the code directory of this repository.
-
-
+This function can be found in a file called [textual.js](https://github.com/mullaney/barista/blob/master/functions/textual.js) in the code directory of this repository. You can find more about arrays on this blog in [part 1]({{ site.baseurl }}{% post_url 2017-10-18-arrays-part-1 %}) of this series.
