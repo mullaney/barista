@@ -2,11 +2,6 @@ function createLockFunction(combo, m) {
   var combination = combo;
   var message = m;
   var locked = true;
-  // if (!combo) {
-  //   combination = Math.floor(Math.random() * 1000);
-  // } else {
-  //   combination = combo;
-  // }
 
   return {
     setCombination: function(currCombo, newCombo) {
