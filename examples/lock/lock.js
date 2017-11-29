@@ -1,7 +1,17 @@
 function createLockFunction(combo, m) {
   var combination = combo;
-  var message = m;
-  var locked = true;
+  var message     = m || "";
+  var locked      = true;
+
+  if (combination === undefined) {
+    console.log('Missing combination, no lock returned');
+    return null;
+  } else if (message.replace(/^\s+|\s+$/g, '') === "") {
+    console.log("Empty message. Nothing to lock, no lock returned.")
+    return null;
+  } else {
+    console.log("Creating new lock. Remember your combination to retrieve the message.")
+  }
 
   return {
     setCombination: function(currCombo, newCombo) {
@@ -20,13 +30,20 @@ function createLockFunction(combo, m) {
       } else {
         return "Wrong combination"
       }
+    }, 
+    getMessage: function() {
+      if (!locked) {
+        return message;
+      } else {
+        return "This message is locked. Please unlock first."
+      }
+    },
+    changeMessage: function(combo, newMessage) {
+      if (combo === combination) {
+        message = newMessage;
+        locked = true;
+        return "New message locked away.";
+      }
     }
   }
 }
-
-var myLock = createLockFunction(777, 'My secret message');
-
-console.log(myLock.setCombination(777, 9999));
-console.log(myLock.openLock(777));
-console.log(myLock.openLock(9999));
-console.log(myLock.openLock(9999));
