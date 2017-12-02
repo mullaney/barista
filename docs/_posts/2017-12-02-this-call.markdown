@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "JavaScript Functions - this, call"
+date:   2017-12-02 2:00:00 -0500
+categories: javascript functions this call
+---
+
+## this
+
+When working on various problems or perhaps watching a JavasScript tutorial, you have probably come across the keyword **this**. In context, **this** often makes sense, so like me you may have not thought too deeply about what **this** is and when it should be used.
+
+Outside of a function **this** refers to the global object itself.
+
+{% highlight javascript %}
+  console.log(this === window);
+  // true if this is running in a browser's console
+  console.log(this === global);
+  // true if this is running in node
+{% endhighlight %}
+
+It also sometimes refers to the global object when **this** appears inside a function, depending on how the function is called.
+
+{% highlight javascript %}
+  function getThis() {
+    return this;
+  }
+  console.log(getThis());
+  // In the browser, this function would return the global window object.
+{% endhighlight %}
+
+If we add 'use strict' to the function. then the same code would return undefined:
+
+{% highlight javascript %}
+  function getThis() {
+    'use strict';
+    return this;
+  }
+  console.log(getThis());
+  // undefined
+{% endhighlight %}
+
+So why is does **this** work in this way? You know how many methods are called from an object? Think of something like Math.random(). The random() method belongs to the Math object. If you could look inside the random() method and use console.log(this), it would return the Math object. So when you run a function globally, like getThis() above in the simple non-strict version, the global object is implied. It's as if you called global.getThis().
+
+In the second version where we 'use strict', the object from which getThis() is being called is missing. It's not there, and so **this** is undefined.
+
+## Function.prototype.call()
+
+There is a method attached to every function in JavaScript named .call(). If you run the call method on a function, it calls the function, which may sound completely redundant, but it's not. And the key to understanding it may be **this**.
+
+{% highlight javascript %}
+  function sayHello() {
+    console.log('Hello!');
+  }
+
+  sayHello();
+  // 'Hello!'
+
+  sayHello.call();
+  // 'Hello!'
+{% endhighlight %}
+
+No matter which version you use to run sayHello(), you get the same result. But wait, there's more.
+
+The call() method can take arguments. The first one is an object. So what happens if we pass an object to the call() method of getThis()?
+
+{% highlight javascript %}
+function getThis() {
+  return this;
+}
+
+console.log(getThis.call({}));
+// {}
+
+var person = {
+  name: 'kevin'
+}
+
+console.log(getThis.call(person));
+// { name: 'kevin' }
+{% endhighlight %}
+
+So what happened? The call() method allowed us to run the getThis() function with the person object as **this**. This seems intriguing, but it might not be obvious how useful this is at first. At least it wasn't to me. It might help if we can think of an example where we might want to run a method using different objects as the **this** object.
+
+Ok, lets say you needed a function logs all the key and value pairs for an object to the console. your application already has the following three objects:
+
+{% highlight javascript %}
+  var car = {
+    make: 'honda',
+    model: 'accord',
+    year: 2014,
+    used: true,
+    hadAccident: false
+  }
+
+  var driver = {
+    name: 'Kevin',
+    age: 23,
+    licensed: false,
+  }
+
+  var dealer = {
+    name: 'Happy Hondas'
+  }
+{% endhighlight %}
+
+There are a few ways to accomplish this, but one version involves the call function.
+
+{% highlight javascript %}
+  function logKeysAndValues() {
+    for (var key in this) {
+      console.log(key, this[key]);
+    }
+    console.log('---');
+  }
+
+  logKeysAndValues.call(car);
+  logKeysAndValues.call(driver);
+  logKeysAndValues.call(dealer);
+{% endhighlight %}
+
+We write a function that steps through all the key value pairs of an object and logs them. Then we pass the objects to the function using the call method. It's works as if each of these objects already have a function in their prototype that behaves like:
+
+- car.logKeysAndValues();
+- driver.logKeysAndValues();
+- dealer.logKeysAndValues();
