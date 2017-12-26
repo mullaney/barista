@@ -31,7 +31,6 @@ function logKeysAndValues() {
   console.log('---');
 }
 
-
 logKeysAndValues.call(car);
 logKeysAndValues.call(driver);
 logKeysAndValues.call(dealer);

@@ -16,6 +16,7 @@ These are some interesting links to explore related to Javascript:
 * [CSS Font Stack](https://www.cssfontstack.com) See how many users should have a given font
 * [Google Fonts](https://fonts.google.com)
 * [Placeholder Images](https://picsum.photos/)
+* [Google Font Combinations](http://fontpair.co/)
 
 ## NPM Packages
 * [nodemon](https://www.npmjs.com/package/nodemon)
